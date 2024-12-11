@@ -17,6 +17,7 @@ function Header(props){
 
 export default function () {
   return (
+    
    <SectionWrapper header={"generate your workout"} title={['It\'s', 'Huge','o\'clock']}>
   <Header index={'01'} title={'Pick your poison'} description={"Select the workout you wish to endure."}/>
   <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
@@ -29,6 +30,16 @@ export default function () {
        </button>
     )
   })}
+  </div>
+  <Header index={'02'} title={'Lock on targets'} description={"Select the muscles judged for annihilation."}/>
+  <div className='bg-slate-950 p-3 border border-solid border-blue-400 rounded-lg'>
+<div>
+  <p>Select muscle groups</p>
+  <i className='fa-solid fa-caret-down'></i>
+</div>
+  
+  
+ 
   </div>
    </SectionWrapper>
   )
