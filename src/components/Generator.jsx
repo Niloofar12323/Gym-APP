@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import SectionWrapper from './SectionWrapper'
 import { SCHEMES, WORKOUTS } from '../utils/swoldier'
+import Button from './Button'
 
 function Header(props){
   const {index, title, description} = props
@@ -58,7 +59,7 @@ function updateMuscles(muscleGroup) {
        <button onClick={()=>{
         setMuscles([])
         setPoison(type)
-       }} className={'bg-slate-950 border  duration-200 hover:border-blue-600 py-3 rounded-lg ' + (type === poison ? ' border-blue-600' : 'border-blue-400')} key={typeIndex}>
+       }} className={'bg-slate-950 border  duration-200 px-4 hover:border-blue-600 py-3 rounded-lg ' + (type === poison ? ' border-blue-600' : 'border-blue-400')} key={typeIndex}>
         <p className='capitalize'>{type.replaceAll('_', " ")}</p>
        </button>
     )
@@ -95,12 +96,14 @@ function updateMuscles(muscleGroup) {
     return (
       <button onClick={()=>{
         setGoal(scheme)
-       }} className={'bg-slate-950 border  duration-200 hover:border-blue-600 py-3 rounded-lg ' + (scheme === goal ? ' border-blue-600' : 'border-blue-400')} key={schemeIndex}>
+       }} className={'bg-slate-950 border  duration-200 px-4 hover:border-blue-600 py-3 rounded-lg ' + (scheme === goal ? ' border-blue-600' : 'border-blue-400')} key={schemeIndex}>
         <p className='capitalize'>{scheme.replaceAll('_', " ")}</p>
        </button>
     )
   })}
   </div>
+  < Button text={"Formulate"}></Button>
    </SectionWrapper>
+   
   )
 }
