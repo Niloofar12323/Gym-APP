@@ -16,11 +16,10 @@ function Header(props){
   )
 }
 
-export default function () {
+export default function Generator(props) {
+  const{muscles, setMuscles, poison, setPoison, goal, setGoal,updateWorkout} = props
   const [showModal, setShowModal] = useState(false)
-  const [poison,setPoison] = useState('individual')
-  const [muscles,setMuscles] = useState([])
-  const [goal,setGoal] = useState('strength_power')
+ 
  function toggleModal() {
   setShowModal(!showModal)
 }
@@ -71,7 +70,6 @@ function updateMuscles(muscleGroup) {
   <p className='capitalize'>{muscles.length==0 ?'Select muscle groups' : muscles.join(' ')}</p>
   <i className='fa-solid absolute  right-3 top-1/2 -trenslate-y-1/2 fa-caret-down'></i>
 </button>
-  
   {showModal && (
     <div className='flex flex-col px-3 pb-3 '>
       {(poison === 'individual' ? WORKOUTS[poison]:Object.keys(WORKOUTS[poison])).map((muscleGroup,muscleGroupIndex) =>{
@@ -89,7 +87,7 @@ function updateMuscles(muscleGroup) {
  
   </div>
   <Header index={'03'} title={'Become Junggernaut'} description={"Select your ultimate objective."}/>
-  <div className='grid grid-cols-2 sm:grid-cols-3 gap-4'>
+  <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
 
   
   {Object.keys(SCHEMES).map((scheme, schemeIndex)=>{
@@ -102,7 +100,7 @@ function updateMuscles(muscleGroup) {
     )
   })}
   </div>
-  < Button text={"Formulate"}></Button>
+  < Button func={updateWorkout} text={"Formulate"}></Button>
    </SectionWrapper>
    
   )

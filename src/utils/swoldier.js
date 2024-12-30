@@ -23,7 +23,7 @@ export const WORKOUTS = {
     bro_split: {
         push: ['triceps', 'chest', 'shoulders'],
         pull: ['back', 'shoulders', 'biceps'],
-        legs: ['glutes', 'calves', 'hamstrings', 'quads']
+        legs: ['glutes', 'calves', 'hamstri1 ngs', 'quads']
     },
     bodybuilder_split: {
         chest: ['chest'],
